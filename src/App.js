@@ -1,18 +1,20 @@
 import React from "react";
-import Wish from "./WishMessage/Wish";
-import store from "./Redux/Store";
+import Greet from "./Redux-Basics/GreetComp/Greet";
+/*import Wish from "./Redux-Basics/WishMessage/Wish";*/
+import {Store} from "./Redux-Basics/Redux/Store";
 import {Provider} from "react-redux";
-let App = () => {
-  return (
-    <>
-      <nav className="navbar navbar-dark bg-dark ">
-        <a href="/">React Redux Basic Example</a>
-      </nav>
-      <Provider store={store}>
-      <Wish/>
-      </Provider>
 
-    </>
-  )
+let App=() => {
+  return(<React.Fragment>
+    <nav className="navbar navbar-dark bg-dark">
+      <a href="/">React-Redux Example</a>
+    </nav>
+    
+    <Provider store={Store}>
+    <Greet/>
+  
+    </Provider>
+  </React.Fragment>)
+  
 }
 export default App;
