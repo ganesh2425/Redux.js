@@ -33,9 +33,9 @@ let Product =()=>{
                     <i
                       className="fa fa-minus-circle"
                       onClick={() => {
-                        setProduct({ ...product, qty: product.qty - 1 });
+                        setProduct({ ...product, qty: product.qty<1?1:product.qty - 1 });
                       }}
-                    ></i>
+                    ></i>   
                     {product.qty}
                     <i
                       className="fa fa-plus-circle"

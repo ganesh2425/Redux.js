@@ -1,7 +1,7 @@
 import React from "react";
-import Counter from "./Counter";
-import Message from "./Message";
-import Product from "./Product";
+import Counter from "./React-Hooks/Counter";
+import Message from "./React-Hooks/Message";
+import Product from "./React-Hooks/Product";
 let App =()=>{
     return(<>
     <nav className="navbar navbar-dark bg-dark">
