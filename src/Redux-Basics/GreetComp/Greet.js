@@ -1,34 +1,41 @@
-import React from "react";
-import { sayGMAction,sayGNAction } from "./greet.action";
+import React from 'react';
+import { sayGMorningAction, sayGAfternoonAction, sayGNightAction} from "./greet.action";
 import {useSelector, useDispatch} from "react-redux";
 
-let Greet=() =>  {
-
-    let messageData = useSelector((state)=>{return state.messageReducer});
-    let dispatch = useDispatch();
-    let sayGM =()=>{
-        dispatch(sayGMAction());
+let Wish =()=>{
+    const dispatch = useDispatch()
+    let Msg=useSelector((state)=>{
+        return state.message;
+    })
+    let sayGMorning =()=>{
+        dispatch(sayGMorningAction());
     }
-    let sayGN =()=>{
-        dispatch(sayGNAction());
+    let sayGAfternoon =()=>{
+        dispatch(sayGAfternoonAction());
     }
-    return(<React.Fragment>
-        <div className="container mt-4">
+    let sayGNight =()=>{
+        dispatch(sayGNightAction());
+    }
+    
+    return(
+        <>
+        <div className="container m-5">
             <div className="row">
-                <div className="col-md-8">
+                <div className="col-6">
                     <div className="card">
                         <div className="card-header">
-                            <pre>{JSON.stringify(messageData)}</pre>
-                            <h4>Message: Hello World</h4>
+                            <h2>Message: {Msg.message}</h2>
                         </div>
                         <div className="card-body">
-                            <button className="btn btn-primary mr-3" onclick={sayGM}>GM</button>
-                            <button className="btn btn-success" onClick={sayGN}>Gn</button>
+                            <button className="btn btn-info ml-3" onClick={sayGMorning}>GM</button>
+                            <button className="btn btn-warning ml-3" onClick={sayGAfternoon}>GA</button>
+                            <button className="btn btn-success ml-3" onClick={sayGNight}>GN</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </React.Fragment>)
+        </>
+    )
 }
-export default Greet;
+export default Wish;

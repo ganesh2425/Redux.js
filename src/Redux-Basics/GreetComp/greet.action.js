@@ -1,20 +1,30 @@
 //create actions
+
 const GOOD_MORNING = "GOOD_MORNING";
+const GOOD_AFTERNOON = "GOOD_AFTERNOON";
 const GOOD_NIGHT = "GOOD_NIGHT";
 
-//create action type
+//create action types
 
-let sayGMAction =()=>{
-    return {
-        type: GOOD_MORNING,
+let sayGMorningAction =()=>{
+    return{
+        message: GOOD_MORNING,
     }
 }
-let sayGNAction =()=>{
-    return {
-        type: GOOD_NIGHT,
+let sayGAfternoonAction =()=>{
+    return{
+        message: GOOD_AFTERNOON,
+    }
+}
+let sayGNightAction =()=>{
+    return{
+        message: GOOD_NIGHT,  
     }
 }
 
-//export named actions, action types
-
-export {GOOD_MORNING,GOOD_NIGHT, sayGMAction,sayGNAction};
+export {GOOD_MORNING, 
+        GOOD_AFTERNOON, 
+        GOOD_NIGHT, 
+        sayGMorningAction, 
+        sayGAfternoonAction,
+        sayGNightAction,}

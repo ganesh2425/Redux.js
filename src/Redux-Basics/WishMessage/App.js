@@ -1,7 +1,6 @@
 import React from "react";
-import Greet from "./Redux-Basics/GreetComp/Greet";
-/*import Wish from "./Redux-Basics/WishMessage/Wish";*/
-import {Store} from "./Redux-Basics/Redux/Store";
+import Wish from "./Redux-Basics/WishMessage/Wish";
+import {Store} from "../WishMessage/Store";
 import {Provider} from "react-redux";
 
 let App=() => {
@@ -11,7 +10,8 @@ let App=() => {
     </nav>
     
     <Provider store={Store}>
-    <Greet/>
+    <Wish/>
+    
   
     </Provider>
   </React.Fragment>)
